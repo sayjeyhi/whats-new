@@ -1,4 +1,7 @@
+# Ecma script features
+> from revolutionary es6 till current lastest release
 
+Ecma script main features on each release are listed below, click on each version title to see the features.
 
 <details open><summary><h2>ES2015 (es6) </h2></summary>
 
@@ -50,10 +53,12 @@ Find elements in an array
 console.log([1, 2, 3, 4].find(x => x > 2)); // 3
 console.log([1, 2, 3, 4].findIndex(x => x > 2)); // 2
 ```
+        
+</details>
 
 ---
-</details>
-<details open><summary><h2>ES2016 </h2></summary>
+
+<details><summary><h2>ES2016 </h2></summary>
 
 ### Array.prototype.includes
 Check if an array contains an element
@@ -66,10 +71,12 @@ console.log([1, 2, 3].includes(2)); // true
 ```js
 console.log(2 ** 3); // 8
 ```
+        
+</details>
 
 ---
-</details>
-<details open><summary><h2>ES2017 </h2></summary>
+
+<details><summary><h2>ES2017 </h2></summary>
 
 ### Async/Await
 Syntactic sugar for promises
@@ -108,10 +115,12 @@ const sharedBuffer = new SharedArrayBuffer(16);
 const int32 = new Int32Array(sharedBuffer);
 Atomics.store(int32, 0, 123);
 ```
+        
+</details>
 
 ---
-</details>
-<details open><summary><h2>ES2018 </h2></summary>
+
+<details><summary><h2>ES2018 </h2></summary>
 
 ### Rest/Spread Properties
 Spread objects
@@ -143,10 +152,12 @@ const regex = /(?<year>\d{4})-(?<month>\d{2})/;
 const match = regex.exec("2023-04");
 console.log(match.groups.year); // "2023"
 ```
+        
+</details>
 
 ---
-</details>
-<details open><summary><h2>ES2019 </h2></summary>
+
+<details><summary><h2>ES2019 </h2></summary>
 
 ### Array.prototype.flat
 Flatten nested arrays
@@ -176,10 +187,12 @@ throw new Error("Oops");
 console.log("Error caught");
 }
 ```
+        
+</details>
 
 ---
-</details>
-<details open><summary><h2>ES2020 </h2></summary>
+
+<details><summary><h2>ES2020 </h2></summary>
 
 ### Nullish Coalescing Operator (??)
 Return right operand if left is null or undefined
@@ -193,10 +206,12 @@ Avoid errors when accessing deep properties
 const obj = {};
 console.log(obj?.prop?.nested);
 ```
+        
+</details>
 
 ---
-</details>
-<details open><summary><h2>ES2021 </h2></summary>
+
+<details><summary><h2>ES2021 </h2></summary>
 
 ### String.prototype.replaceAll
 Replace all occurrences of a substring
@@ -209,10 +224,12 @@ Improve number readability
 ```js
 const num = 1_000_000;
 ```
+        
+</details>
 
 ---
-</details>
-<details open><summary><h2>ES2022 </h2></summary>
+
+<details><summary><h2>ES2022 </h2></summary>
 
 ### Top-Level Await
 Use `await` outside of async functions
@@ -225,10 +242,12 @@ Check for own properties safely
 ```js
 console.log(Object.hasOwn({a: 1}, "a"));
 ```
+        
+</details>
 
 ---
-</details>
-<details open><summary><h2>ES2023 </h2></summary>
+
+<details><summary><h2>ES2023 </h2></summary>
 
 ### Array.prototype.toSorted
 Sort without mutating original array
@@ -243,10 +262,12 @@ Support for Unix-style shebang
 #!/usr/bin/env node
 console.log("Hello, Node.js!");
 ```
+        
+</details>
 
 ---
-</details>
-<details open><summary><h2>ES2024 </h2></summary>
+
+<details><summary><h2>ES2024 </h2></summary>
 
 ### Symbols as WeakMap keys
 Symbols can now be used as keys in WeakMaps
