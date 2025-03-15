@@ -54,9 +54,9 @@ jobs:
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@v6
-        file: website/Dockerfile
         with:
           context: .
+          file: website/Dockerfile
           push: true
           platforms: linux/amd64
           tags: |
