@@ -1,8 +1,15 @@
 name: Build and Deploy
-on: [push]
+on:
+  push:
+    branches:
+      - main # Trigger when PR is merged into the 'main' branch
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./website
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -24,14 +31,10 @@ jobs:
           cache-bin: false
 
       - name: Install packages
-        run: |
-          cd website
-          bun i
+        run: bun i --production --frozen-lockfile
 
       - name: Build 🧩
-        run: |
-          cd website
-          bun run build
+        run: bun run build
         env:
           CI: true
 
