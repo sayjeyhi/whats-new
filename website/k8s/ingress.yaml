@@ -23,4 +23,4 @@ spec:
               service:
                 name: whats-new-service
                 port:
-                  number: 8080
+                  number: 3000

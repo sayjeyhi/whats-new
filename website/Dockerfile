@@ -1,11 +1,26 @@
-# Serve the built React app
-FROM nginx:alpine
+FROM oven/bun:latest AS base
 
-# Set working directory
-WORKDIR /usr/share/nginx/html
+WORKDIR /app
 
-# Copy built React files
-COPY dist /usr/share/nginx/html
+COPY package.json bun.lock ./
 
-# Copy Nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+RUN bun install --frozen-lockfile --production --ignore-scripts
+
+FROM base AS builder
+
+RUN bun install --frozen-lockfile --ignore-scripts
+
+COPY . .
+
+RUN bun run build
+
+FROM oven/bun:slim AS production
+
+WORKDIR /app
+
+COPY --from=base /app/node_modules ./node_modules
+COPY --from=builder /app/build/ .
+
+EXPOSE 3000
+
+CMD ["remix-serve", "./server/index.js"]

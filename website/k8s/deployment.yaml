@@ -18,20 +18,20 @@ spec:
         - name: whats-new
           image: ghcr.io/sayjeyhi/whats-new:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
 
           livenessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 3000
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 3000
           resources:
             limits:
               cpu: '500m'
               memory: '512Mi'
             requests:
-              cpu: '250m'
-              memory: '256Mi'
+              cpu: '100m'
+              memory: '100Mi'
