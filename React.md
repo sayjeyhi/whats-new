@@ -1,6 +1,6 @@
 ---
 title: React
-image: /images/technologies/react.png
+image: /images/technologies/React.png
 updated: 2024-03-15
 description: React is a JavaScript library for building user interfaces.
 tags:
