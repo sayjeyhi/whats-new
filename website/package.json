@@ -2,6 +2,7 @@
   "name": "whats-new-app",
   "private": true,
   "sideEffects": false,
+  "type": "module",
   "scripts": {
     "dev": "remix vite:dev",
     "build": "remix vite:build",

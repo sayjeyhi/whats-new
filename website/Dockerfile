@@ -19,8 +19,8 @@ FROM oven/bun:slim AS production
 WORKDIR /app
 
 COPY --from=base /app/node_modules ./node_modules
-COPY --from=builder /app/build/ .
+COPY --from=builder /app/build/ ./build
 
 EXPOSE 3000
 
-CMD ["remix-serve", "./server/index.js"]
+CMD ["remix-serve", "./build/server/index.js"]
