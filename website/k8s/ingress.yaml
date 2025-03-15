@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: whats-new-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod-new"
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: "web,websecure"
     traefik.ingress.kubernetes.io/router.middlewares: ""
