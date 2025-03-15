@@ -29,6 +29,8 @@ export interface Technology {
 
 const technologiesPath = path.join(process.cwd(), "./data");
 
+console.log("==technologiesPath", technologiesPath);
+
 const getParser = async () => {
   const highlighter = await createHighlighter({
     // In this case, we include the "js" language specifier to ensure that
