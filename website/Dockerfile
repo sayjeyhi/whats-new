@@ -20,6 +20,7 @@ WORKDIR /app
 
 COPY --from=base /app/node_modules ./node_modules
 COPY --from=builder /app/build/ ./build
+COPY --from=builder /app/data/ ./data
 
 EXPOSE 3000
 
