@@ -31,16 +31,18 @@ const technologiesPath = path.join(process.cwd(), "./data");
 
 console.log("==technologiesPath", technologiesPath);
 
+let Parser: Marked;
 const getParser = async () => {
+  if (Parser) {
+    return Parser;
+  }
+
   const highlighter = await createHighlighter({
-    // In this case, we include the "js" language specifier to ensure that
-    // Shiki applies the appropriate syntax highlighting for Markdown code
-    // blocks.
     langs: ['md', 'js', 'ts', 'tsx', 'css', 'html', 'json', 'go', 'php', 'java', 'python', 'ruby', 'rust', 'swift', 'yaml'],
     themes: ['material-theme-darker']
   })
 
-  const Parser = new Marked()
+  Parser = new Marked()
     .use(
       markedShiki({
         highlight(code, lang, props) {
