@@ -27,7 +27,7 @@ export interface Technology {
   latestVersion: string;
 }
 
-const technologiesPath = path.join(process.cwd(), "..");
+const technologiesPath = path.join(process.cwd(), "./data");
 
 const getParser = async () => {
   const highlighter = await createHighlighter({

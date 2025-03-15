@@ -2,9 +2,8 @@
   "name": "whats-new-app",
   "private": true,
   "sideEffects": false,
-  "type": "module",
   "scripts": {
-    "dev": "remix vite:dev",
+    "dev": "cp ../*.md ./data && remix dev",
     "build": "remix vite:build",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"

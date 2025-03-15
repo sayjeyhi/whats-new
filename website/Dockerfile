@@ -19,6 +19,7 @@ FROM oven/bun:slim AS production
 WORKDIR /app
 
 COPY --from=base /app/node_modules ./node_modules
+COPY --from=base /app/*.md ./data
 COPY --from=builder /app/build/ ./build
 
 EXPOSE 3000
