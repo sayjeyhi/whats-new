@@ -19,7 +19,7 @@ jobs:
 
       - name: Copy website code
         run: |
-          cp -r ./website ./
+          cp -ar ./website/* .
 
       - name: Kubernetes set context
         uses: Azure/k8s-set-context@v3
