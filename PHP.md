@@ -1,3 +1,13 @@
+---
+title: PHP
+image: /images/technologies/PHP.png
+updated: 2024-03-15
+description: PHP is a popular general-purpose scripting language that is especially suited for web development.
+tags:
+  - PHP
+  - Backend
+---
+
 # PHP
 > Old school PHP, the language most of us used and still not dead!
 

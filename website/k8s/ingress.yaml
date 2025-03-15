@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whats-new-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod-new"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: "web,websecure"
+    traefik.ingress.kubernetes.io/router.middlewares: ""
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - wasnew.catshoulder.dev
+      secretName: whats-new-tls-v2
+  rules:
+    - host: wasnew.catshoulder.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: whats-new-service
+                port:
+                  number: 8080

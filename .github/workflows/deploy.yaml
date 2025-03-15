@@ -1,0 +1,44 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Cache  💾
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.cache
+          key: ${{ runner.os }}-3d-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Setup Bun Runtime
+        uses: antongolub/action-setup-bun@v1
+        with:
+          bun-version: 1.0.20
+          bun-repo: 'Jarred-Sumner/bun-releases-for-updater'
+          cache: false
+          cache-bin: false
+
+      - name: Install packages
+        run: |
+          cd website
+          bun i
+
+      - name: Build 🧩
+        run: |
+          cd website
+          bun run build
+        env:
+          CI: true
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: website/dist
+          CLEAN: true # Automatically remove deleted files from the deploy branch
