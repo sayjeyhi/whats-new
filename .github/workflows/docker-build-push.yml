@@ -35,14 +35,15 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Remove lock file
-        run: rm -f bun.lock
-
       - name: Install dependencies
-        run: bun i
+        run: |
+          cd website
+          bun i --production --frozen-lockfile
 
       - name: Build
-        run: bun run build
+        run: |
+          cd website
+          bun run build
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -53,9 +54,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}  # GitHub automatically provides this secret
-
-      - name: Verify GHCR login
-        run: docker info
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -77,8 +75,8 @@ jobs:
           imagepullsecrets: |
             dockerconfigjson-github-com
           manifests: |
-            ./k8s/deployment.yaml
-            ./k8s/service.yaml
-            ./k8s/ingress.yaml
-            ./k8s/middleware.yaml
+            ./website/k8s/deployment.yaml
+            ./website/k8s/service.yaml
+            ./website/k8s/ingress.yaml
+            ./website/k8s/middleware.yaml
           images: ghcr.io/${{ env.REPOSITORY_NAME }}:${{ env.COMMIT_SHA_SHORT }}
