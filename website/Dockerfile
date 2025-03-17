@@ -18,6 +18,7 @@ FROM oven/bun:slim AS production
 
 WORKDIR /app
 
+COPY --from=base /app/package.json ./
 COPY --from=base /app/node_modules ./node_modules
 COPY --from=builder /app/build/ ./build
 COPY --from=builder /app/data/ ./data
