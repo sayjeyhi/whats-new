@@ -1,8 +1,8 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getTechnologyList } from "~/utils/technologies.server";
-import Recommendations from "~/components/Recommendations";
-import RandomTechnologyUpdates from "~/components/RandomTechnologyUpdates";
+// import Recommendations from "~/components/Recommendations";
+// import RandomTechnologyUpdates from "~/components/RandomTechnologyUpdates";
 import RecentlyUpdatedTechnologies from "~/components/RecentlyUpdatedTechnologies";
 
 export async function loader() {

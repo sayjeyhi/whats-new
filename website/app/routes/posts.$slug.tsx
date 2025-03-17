@@ -1,6 +1,6 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import {getTechnology} from "~/utils/technologies.server";
+import { getTechnology } from "~/utils/technologies.server";
 import type { LoaderFunctionArgs } from "@remix-run/node";
 
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -17,8 +17,13 @@ export default function Post() {
   return (
     <article>
       <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      <div className="text-gray-600 mb-8">Last updated: {post.formatedDate}</div>
-      <div className="prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className="text-gray-600 mb-8">
+        Last updated: {post.formatedDate}
+      </div>
+      <div
+        className="prose dark:prose-invert"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
     </article>
   );
 }

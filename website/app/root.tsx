@@ -3,21 +3,20 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration, useLoaderData,
+  ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import styles from "./css/style.css?url";
 import Theme from "./theme-provider";
 import Header from "~/components/ui/header";
 import Footer from "~/components/ui/footer";
-import {latestThreeUpdatedTechnologies} from "~/utils/technologies.server";
-import {json} from "@remix-run/node";
-import {useLocation} from "react-router";
+import { latestThreeUpdatedTechnologies } from "~/utils/technologies.server";
+import { json } from "@remix-run/node";
+import { useLocation } from "react-router";
 
 export const links = () => {
-  return [
-    { rel: "stylesheet", href: styles }
-  ];
-}
+  return [{ rel: "stylesheet", href: styles }];
+};
 
 export async function loader() {
   const posts = await latestThreeUpdatedTechnologies();
@@ -31,7 +30,7 @@ export default function App() {
   console.log("useLocation().pathname", useLocation().pathname);
   console.log(isHealthz);
   if (isHealthz) {
-    return 'OK';
+    return "OK";
   }
   const { posts } = useLoaderData<typeof loader>();
 
@@ -43,9 +42,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body
-        className="font-inter antialiased bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-gray-100 tracking-tight"
-      >
+      <body className="font-inter antialiased bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-gray-100 tracking-tight">
         <Theme>
           <div className="overflow-hidden supports-[overflow:clip]:overflow-clip">
             <div className="max-w-[728px] mx-auto">

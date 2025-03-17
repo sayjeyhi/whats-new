@@ -1,13 +1,11 @@
-
 import { useState, useEffect, useRef } from "react";
-
 
 export default function Recommendations() {
   const items = [
     {
       name: "Enrico Perry",
       role: "CTO, medium.com",
-      image: '/images/testimonial-01.jpg',
+      image: "/images/testimonial-01.jpg",
       link: "#0",
       content:
         "If there's one investment that's really paid off, it's hiring a professional developer. I love the results I get every day.",
@@ -15,7 +13,7 @@ export default function Recommendations() {
     {
       name: "Marta Lower",
       role: "CTO, Vimeo",
-      image: '/images/testimonial-02.jpg',
+      image: "/images/testimonial-02.jpg",
       link: "#0",
       content:
         "Thanks to Jordan, we were able to start our company in a matter of weeks. We have never been happier working with a freelancer.",
@@ -23,7 +21,7 @@ export default function Recommendations() {
     {
       name: "John Kusac",
       role: "CEO, Mailchimp",
-      image: '/images/testimonial-03.jpg',
+      image: "/images/testimonial-03.jpg",
       link: "#0",
       content:
         "If there's one investment that's really paid off, it's hiring a professional developer. I love the results I get every day.",
@@ -62,7 +60,7 @@ export default function Recommendations() {
     containerRef.current?.addEventListener("mouseout", playCarousel);
     containerRef.current?.addEventListener(
       "focus",
-      (event) => {
+      (event: FocusEvent) => {
         if (
           event.currentTarget &&
           !(event.currentTarget as Node).contains(event.relatedTarget as Node)
@@ -94,7 +92,7 @@ export default function Recommendations() {
       containerRef.current?.removeEventListener("mouseout", playCarousel);
       containerRef.current?.removeEventListener(
         "focus",
-        (event) => {
+        (event: FocusEvent) => {
           if (
             event.currentTarget &&
             !(event.currentTarget as Node).contains(event.relatedTarget as Node)

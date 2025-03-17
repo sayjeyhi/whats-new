@@ -6,7 +6,7 @@ export default function Newsletter() {
           Subscribe to changes!
         </h2>
         <p className="text-xs text-gray-400 dark:text-gray-400 mb-2">
-          We won't spam you with updates, we promise!
+          We won&apos;t spam you with updates, we promise!
         </p>
       </div>
       <div className="p-5 rounded-xl bg-linear-to-tr from-gray-100 to-gray-50 dark:bg-linear-to-tr dark:from-gray-800 dark:to-gray-800/[0.65]">

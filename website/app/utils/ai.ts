@@ -28,4 +28,3 @@ export async function getSummary(text: string) {
 
   return result.response.body.candidates[0].content;
 }
-

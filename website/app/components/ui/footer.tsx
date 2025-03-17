@@ -1,17 +1,17 @@
-import {Technology} from "~/utils/technologies.server";
+import { Technology } from "~/utils/technologies.server";
 import Newsletter from "~/components/Newsletter";
 
 type Props = {
   latestUpdatedTechnologies: Technology[];
-}
+};
 
 export default function Footer({ latestUpdatedTechnologies }: Props) {
   return (
     <footer className="space-y-12 text-center pb-16">
-
       <div className="group flex justify-center gap-4">
-        {latestUpdatedTechnologies.map(tech => (
+        {latestUpdatedTechnologies.map((tech) => (
           <img
+            key={tech.slug}
             className="rounded-xl even:rotate-2 odd:-rotate-2 even:group-hover:rotate-0 odd:group-hover:rotate-0 transition duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] shadow-lg"
             src={tech.image}
             width={100}
@@ -91,7 +91,16 @@ export default function Footer({ latestUpdatedTechnologies }: Props) {
         </ul>
         {/* Copyright notes */}
         <p className="text-sm text-gray-400 dark:text-gray-600">
-          &copy; <a className="underline" href="https://github.com/sayjeyhi/whats-new" target="_blank" >What's new</a> OSS project. All rights reserved.
+          &copy;{" "}
+          <a
+            className="underline"
+            href="https://github.com/sayjeyhi/whats-new"
+            target="_blank"
+            rel="noreferrer"
+          >
+            What`s new
+          </a>{" "}
+          OSS project. All rights reserved.
         </p>
       </div>
     </footer>

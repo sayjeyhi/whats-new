@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms" {
   strategy: base;
@@ -29,7 +29,6 @@
   }
 }
 
-
 /* Custom CSS for technology pages */
 details {
   display: flex;
@@ -44,11 +43,11 @@ details {
 }
 
 details > summary::before {
-  content: '▶️';
+  content: "▶️";
 }
 
 details[open] > summary::before {
-  content: '🔽';
+  content: "🔽";
 }
 
 hr {
