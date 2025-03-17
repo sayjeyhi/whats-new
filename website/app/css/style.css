@@ -39,7 +39,7 @@ details {
   margin: 0.5em 0;
 }
 .dark details {
-  border: 1px solid var(--color-gray-600);
+  border: 1px solid var(--color-gray-800);
 }
 
 details > summary::before {
@@ -76,7 +76,7 @@ details[open] summary {
 }
 
 .dark details[open] summary {
-  border-bottom: 1px solid var(--color-gray-600);
+  border-bottom: 1px solid var(--color-gray-800);
 }
 
 details summary + h3 {

@@ -4,15 +4,6 @@ import frontMatter from "front-matter";
 import { Marked } from "marked";
 import markedShiki from "marked-shiki";
 import { createHighlighter } from "shiki";
-import {
-  transformerNotationDiff,
-  transformerNotationHighlight,
-  transformerNotationWordHighlight,
-  transformerNotationFocus,
-  transformerNotationErrorLevel,
-  transformerMetaHighlight,
-  transformerMetaWordHighlight,
-} from "@shikijs/transformers";
 
 export interface Technology {
   slug: string;
@@ -40,21 +31,16 @@ const getParser = async () => {
 
   const highlighter = await createHighlighter({
     langs: [
-      "md",
       "js",
       "ts",
       "tsx",
       "css",
-      "html",
-      "json",
       "go",
       "php",
       "java",
       "python",
       "ruby",
-      "rust",
-      "swift",
-      "yaml",
+      "rust"
     ],
     themes: ["material-theme-darker"],
   });
@@ -65,26 +51,7 @@ const getParser = async () => {
         return highlighter.codeToHtml(code, {
           lang,
           theme: "material-theme-darker",
-          meta: { __raw: props.join(" ") }, // required by `transformerMeta*`
-          transformers: [
-            transformerNotationDiff({
-              matchAlgorithm: "v3",
-            }),
-            transformerNotationHighlight({
-              matchAlgorithm: "v3",
-            }),
-            transformerNotationWordHighlight({
-              matchAlgorithm: "v3",
-            }),
-            transformerNotationFocus({
-              matchAlgorithm: "v3",
-            }),
-            transformerNotationErrorLevel({
-              matchAlgorithm: "v3",
-            }),
-            transformerMetaHighlight(),
-            transformerMetaWordHighlight(),
-          ],
+          meta: { __raw: props.join(" ") },
         });
       },
     }),

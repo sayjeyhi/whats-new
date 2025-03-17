@@ -4,7 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "cp ../*.md ./data && remix dev",
+    "dev": "cp ../*.md ./data && PORT=5001 remix dev",
     "build": "remix vite:build",
     "start": "PORT=3000 remix-serve ./build/server/index.js",
     "typecheck": "tsc",

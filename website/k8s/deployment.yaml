@@ -22,11 +22,11 @@ spec:
 
           livenessProbe:
             httpGet:
-              path: /healthz
+              path: /healthz.html
               port: 3000
           readinessProbe:
             httpGet:
-              path: /healthz
+              path: /healthz.html
               port: 3000
           resources:
             limits:

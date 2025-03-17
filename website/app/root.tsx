@@ -12,7 +12,6 @@ import Header from "~/components/ui/header";
 import Footer from "~/components/ui/footer";
 import { latestThreeUpdatedTechnologies } from "~/utils/technologies.server";
 import { json } from "@remix-run/node";
-import { useLocation } from "react-router";
 
 export const links = () => {
   return [{ rel: "stylesheet", href: styles }];
@@ -24,14 +23,6 @@ export async function loader() {
 }
 
 export default function App() {
-  const isHealthz = useLocation().pathname === "/healthz";
-
-  console.log("--------------");
-  console.log("useLocation().pathname", useLocation().pathname);
-  console.log(isHealthz);
-  if (isHealthz) {
-    return "OK";
-  }
   const { posts } = useLoaderData<typeof loader>();
 
   return (
@@ -41,6 +32,11 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className="font-inter antialiased bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-gray-100 tracking-tight">
         <Theme>
