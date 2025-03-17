@@ -24,4 +24,4 @@ COPY --from=builder /app/data/ ./data
 
 EXPOSE 3000
 
-CMD ["remix-serve", "./build/server/index.js"]
+CMD ["npm", "run", "start"]

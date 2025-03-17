@@ -1,4 +1,4 @@
-import { Technology } from "~/utils/technologies.server";
+import { type Technology } from "~/utils/types";
 import Newsletter from "~/components/Newsletter";
 
 type Props = {

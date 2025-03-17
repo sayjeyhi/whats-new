@@ -4,24 +4,10 @@ import frontMatter from "front-matter";
 import { Marked } from "marked";
 import markedShiki from "marked-shiki";
 import { createHighlighter } from "shiki";
+import type {Technology} from "~/utils/types";
 
-export interface Technology {
-  slug: string;
-  title: string;
-  updated: string;
-  formatedDate: string;
-  tags: string[];
-  description: string;
-  image: string;
-  content: string;
-  excerpt: string;
-  latestVersion: string;
-}
 
 const technologiesPath = path.join(process.cwd(), "./data");
-
-console.log("========")
-console.log("OOOO technologiesPath", technologiesPath)
 
 let Parser: Marked;
 const getParser = async () => {
@@ -42,7 +28,7 @@ const getParser = async () => {
       "ruby",
       "rust"
     ],
-    themes: ["material-theme-darker"],
+    themes: ["dracula-soft"],
   });
 
   Parser = new Marked().use(
@@ -50,7 +36,7 @@ const getParser = async () => {
       highlight(code, lang, props) {
         return highlighter.codeToHtml(code, {
           lang,
-          theme: "material-theme-darker",
+          theme: "dracula-soft",
           meta: { __raw: props.join(" ") },
         });
       },
@@ -109,13 +95,50 @@ export async function getTechnologyList(): Promise<Technology[]> {
 }
 
 export async function latestThreeUpdatedTechnologies(): Promise<Technology[]> {
-  console.log("==latestThreeUpdatedTechnologies");
   const technologies = await getTechnologyList();
-  return technologies.sort((post) => parseInt(post.updated, 10)).slice(0, 3);
+  return technologies.sort((post) => parseInt(post.updated, 10)).slice(0, 5);
 }
 
 export async function getTechnology(slug: string): Promise<Technology | null> {
   console.log("==getTechnology");
+
+  try {
+    const content = await readFile(
+      path.join(technologiesPath, `${slug}.md`),
+      "utf-8",
+    );
+    const { attributes, body } = frontMatter<Technology>(content);
+
+    // remove h1 from content
+    const htmlBody = body.replace(/<h1>(.*?)<\/h1>/g, "");
+    const Parser = await getParser();
+    const html = await Parser.parse(htmlBody);
+
+    return {
+      slug,
+      title: attributes.title,
+      content: html,
+      excerpt: body.split("\n")[0],
+      updated: attributes.updated,
+      tags: attributes.tags,
+      description: attributes.description,
+      image: attributes.image,
+      latestVersion: "",
+      formatedDate: new Date(attributes.updated).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        minute: "numeric",
+        hour: "numeric",
+      }),
+    };
+  } catch {
+    return null;
+  }
+}
+
+export async function getTechnologyVersion(slug: string): Promise<Technology | null> {
+  console.log("==getTechnologyVersion");
 
   try {
     const content = await readFile(

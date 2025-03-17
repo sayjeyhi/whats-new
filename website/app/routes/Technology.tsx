@@ -1,19 +1,21 @@
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+
+import { type LoaderFunctionArgs, useLoaderData} from "react-router";
 import { getTechnology } from "~/utils/technologies.server";
-import type { LoaderFunctionArgs } from "@remix-run/node";
 
 export async function loader({ params }: LoaderFunctionArgs) {
+  console.log('--------', params);
+
   const post = await getTechnology(params.slug as string);
   if (!post) {
     throw new Response("Not Found", { status: 404 });
   }
-  return json({ post });
+  return { post };
 }
 
-export default function Post() {
+export default function Technology() {
   const { post } = useLoaderData<typeof loader>();
 
+  console.log('--------');
   return (
     <article>
       <h1 className="text-4xl font-bold mb-4">{post.title}</h1>

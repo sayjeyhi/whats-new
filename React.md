@@ -1,13 +1,13 @@
-```
+---
 title: React
-image: /images/technologies/React.png
-updated: 2024-03-16
+image: /images/technologies/ReactJs.png
+updated: 2025-03-16
 description: React is a JavaScript library for building user interfaces.
 tags:
   - React
   - JavaScript
   - Frontend
-```
+---
 
 # React Features
 > From React 16 to the latest release
@@ -186,8 +186,6 @@ function App() {
 
 </details>
 
-```
-
 <details><summary><h2>React 18</h2></summary>
 
 ### Concurrent Rendering
@@ -295,7 +293,6 @@ function Comments() {
 
 </details>
 
-```
 
 <details><summary><h2>React 17</h2></summary>
 
@@ -349,7 +346,6 @@ function App() {
 
 </details>
 
-```
 
 <details><summary><h2>React 16</h2></summary>
 

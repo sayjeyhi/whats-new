@@ -1,4 +1,4 @@
-import { Technology } from "~/utils/technologies.server";
+import { type Technology } from "~/utils/types";
 
 export default function RecentlyUpdatedTechnologies({
   technologies,
@@ -15,7 +15,7 @@ export default function RecentlyUpdatedTechnologies({
           <a
             key={item.slug}
             className="block hover:no-underline decoration-2 p-5 rounded-xl odd:bg-linear-to-tr odd:from-gray-100 odd:to-gray-50 dark:odd:bg-linear-to-tr dark:odd:from-gray-800 dark:odd:to-gray-800/[0.65] border-2 border-transparent hover:border-green-200"
-            href={`/posts/${item.slug}`}
+            href={`/technology/${item.slug}`}
           >
             <article>
               <div className="sm:flex gap-5">
