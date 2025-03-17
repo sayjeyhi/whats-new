@@ -34,7 +34,7 @@ console.log(await Array.fromAsync(asyncGen()));
 
 ---
 
-<details><summary><h2>ES2023 </h2></summary>
+<details open><summary><h2>ES2023 </h2></summary>
 
 ### Array.prototype.toSorted
 Sort without mutating original array
@@ -54,7 +54,7 @@ console.log("Hello, Node.js!");
 
 ---
 
-<details><summary><h2>ES2022 </h2></summary>
+<details open><summary><h2>ES2022 </h2></summary>
 
 ### Top-Level Await
 Use `await` outside of async functions
@@ -72,7 +72,7 @@ console.log(Object.hasOwn({a: 1}, "a"));
 
 ---
 
-<details><summary><h2>ES2021 </h2></summary>
+<details open><summary><h2>ES2021 </h2></summary>
 
 ### String.prototype.replaceAll
 Replace all occurrences of a substring
@@ -90,7 +90,7 @@ const num = 1_000_000;
 
 ---
 
-<details><summary><h2>ES2020 </h2></summary>
+<details open><summary><h2>ES2020 </h2></summary>
 
 ### Nullish Coalescing Operator (??)
 Return right operand if left is null or undefined
@@ -109,7 +109,7 @@ console.log(obj?.prop?.nested);
 
 ---
 
-<details><summary><h2>ES2019 </h2></summary>
+<details open><summary><h2>ES2019 </h2></summary>
 
 ### Array.prototype.flat
 Flatten nested arrays
@@ -144,7 +144,7 @@ console.log("Error caught");
 
 ---
 
-<details><summary><h2>ES2018 </h2></summary>
+<details open><summary><h2>ES2018 </h2></summary>
 
 ### Rest/Spread Properties
 Spread objects
@@ -181,7 +181,7 @@ console.log(match.groups.year); // "2023"
 
 ---
 
-<details><summary><h2>ES2017 </h2></summary>
+<details open><summary><h2>ES2017 </h2></summary>
 
 ### Async/Await
 Syntactic sugar for promises
@@ -225,7 +225,7 @@ Atomics.store(int32, 0, 123);
 
 ---
 
-<details><summary><h2>ES2016 </h2></summary>
+<details open><summary><h2>ES2016 </h2></summary>
 
 ### Array.prototype.includes
 Check if an array contains an element
@@ -243,7 +243,7 @@ console.log(2 ** 3); // 8
 
 ---
 
-<details><summary><h2>ES2015 (es6) </h2></summary>
+<details open><summary><h2>ES2015 (es6) </h2></summary>
 
 ### let and const
 Block-scoped variable declarations

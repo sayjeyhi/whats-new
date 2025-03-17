@@ -10,7 +10,7 @@ tags:
 ---
 
 # TypeScript features
-> Main features release for TypeScript since version 4
+> Main features released for TypeScript since version 4
 
 TypeScript main features on each release are listed below, click on each version title to see the features.
 
@@ -32,7 +32,7 @@ const obj = { key: "value" } as const;
 
 ---
 
-<details><summary><h2>TypeScript 5.3 (2023)</h2></summary>
+<details open><summary><h2>TypeScript 5.3 (2023)</h2></summary>
 
 ### Decoupled Type and Function Parameter Lists
 Allows separating types and function parameters
@@ -51,7 +51,7 @@ class MyClass {}
 
 ---
 
-<details><summary><h2>TypeScript 5.2 (2023)</h2></summary>
+<details open><summary><h2>TypeScript 5.2 (2023)</h2></summary>
 
 ### Explicit Resource Management
 Adds `using` for resource cleanup
@@ -63,7 +63,7 @@ using resource = new SomeResource();
 
 ---
 
-<details><summary><h2>TypeScript 5.1 (2023)</h2></summary>
+<details open><summary><h2>TypeScript 5.1 (2023)</h2></summary>
 
 ### Easier Implicit Returns for `void` Functions
 No longer requires `return` for void functions
@@ -77,7 +77,7 @@ function logMessage(): void {
 
 ---
 
-<details><summary><h2>TypeScript 5.0 (2023)</h2></summary>
+<details open><summary><h2>TypeScript 5.0 (2023)</h2></summary>
 
 ### Enum Unions as Discriminants
 Allows union types to be used in discriminated unions
@@ -96,7 +96,7 @@ class MyClass {}
 
 ---
 
-<details><summary><h2>TypeScript 4.9 (2022)</h2></summary>
+<details open><summary><h2>TypeScript 4.9 (2022)</h2></summary>
 
 ### `satisfies` Operator
 Ensures type compatibility without altering type inference
@@ -110,7 +110,7 @@ const palette = {
 
 ---
 
-<details><summary><h2>TypeScript 4.8 (2022)</h2></summary>
+<details open><summary><h2>TypeScript 4.8 (2022)</h2></summary>
 
 ### Improved Inference for Object Methods
 Better inference for method assignments
@@ -126,7 +126,7 @@ const obj = {
 
 ---
 
-<details><summary><h2>TypeScript 4.7 (2022)</h2></summary>
+<details open><summary><h2>TypeScript 4.7 (2022)</h2></summary>
 
 ### ECMAScript Module Support in Node.js
 Enables native ESM support
@@ -138,7 +138,7 @@ import { readFile } from "fs/promises";
 
 ---
 
-<details><summary><h2>TypeScript 4.6 (2022)</h2></summary>
+<details open><summary><h2>TypeScript 4.6 (2022)</h2></summary>
 
 ### Control Flow Analysis for Destructured Variables
 Improves type narrowing for destructuring
@@ -155,7 +155,7 @@ function process(obj: { x?: number }) {
 
 ---
 
-<details><summary><h2>TypeScript 4.5 (2021)</h2></summary>
+<details open><summary><h2>TypeScript 4.5 (2021)</h2></summary>
 
 ### `Awaited` Utility Type
 Extracts the resolved type from a promise
@@ -167,7 +167,7 @@ type Data = Awaited<Promise<string>>;
 
 ---
 
-<details><summary><h2>TypeScript 4.4 (2021)</h2></summary>
+<details open><summary><h2>TypeScript 4.4 (2021)</h2></summary>
 
 ### Exact Optional Property Types
 Optional properties no longer allow `undefined` implicitly
@@ -181,7 +181,7 @@ interface User {
 
 ---
 
-<details><summary><h2>TypeScript 4.3 (2021)</h2></summary>
+<details open><summary><h2>TypeScript 4.3 (2021)</h2></summary>
 
 ### Override Keyword
 Enforces correct method overriding
@@ -198,7 +198,7 @@ class Derived extends Base {
 
 ---
 
-<details><summary><h2>TypeScript 4.2 (2021)</h2></summary>
+<details open><summary><h2>TypeScript 4.2 (2021)</h2></summary>
 
 ### Template Literal Type Improvements
 Supports better type inference
@@ -210,7 +210,7 @@ type Color = "red" | `light${string}`;
 
 ---
 
-<details><summary><h2>TypeScript 4.1 (2020)</h2></summary>
+<details open><summary><h2>TypeScript 4.1 (2020)</h2></summary>
 
 ### Template Literal Types
 Allows type-safe string manipulation
@@ -222,7 +222,7 @@ type Greeting = `Hello, ${string}!`;
 
 ---
 
-<details><summary><h2>TypeScript 4.0 (2020)</h2></summary>
+<details open><summary><h2>TypeScript 4.0 (2020)</h2></summary>
 
 ### Variadic Tuple Types
 Supports tuple manipulation

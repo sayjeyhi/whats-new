@@ -13,7 +13,7 @@ tags:
 
 PHP language main features on each release are listed below, click on each version title to see the features.
 
-<details><summary><h2>PHP 8.5 (Upcoming, 2025)</h2></summary>
+<details open><summary><h2>PHP 8.5 (Upcoming, 2025)</h2></summary>
 
 ### (To be announced)
 
@@ -58,7 +58,7 @@ $object = LazyObject::create(Foo::class);
 
 ---
 
-<details><summary><h2>PHP 8.3 (2023)</h2></summary>
+<details open><summary><h2>PHP 8.3 (2023)</h2></summary>
 
 ### Typed Class Constants
 Allows type hints for class constants
@@ -88,7 +88,7 @@ try {
 
 ---
 
-<details><summary><h2>PHP 8.2 (2022)</h2></summary>
+<details open><summary><h2>PHP 8.2 (2022)</h2></summary>
 
 ### Disjunctive Normal Form (DNF) Types
 Combine types using OR
@@ -126,7 +126,7 @@ $rand = new Random\Engine\Secure();
 
 ---
 
-<details><summary><h2>PHP 8.1 (2021)</h2></summary>
+<details open><summary><h2>PHP 8.1 (2021)</h2></summary>
 
 ### Enumerations (Enums)
 Define a set of possible values
@@ -172,7 +172,7 @@ function redirect(): never {
 
 ---
 
-<details><summary><h2>PHP 8.0 (2020)</h2></summary>
+<details open><summary><h2>PHP 8.0 (2020)</h2></summary>
 
 ### Named Arguments
 Pass arguments by name
@@ -215,7 +215,7 @@ function example(int|string $value) {}
 
 ---
 
-<details><summary><h2>PHP 7.4 (2019)</h2></summary>
+<details open><summary><h2>PHP 7.4 (2019)</h2></summary>
 
 ### Typed Properties
 Allows type hints for class properties
@@ -241,7 +241,7 @@ $number = 1_000_000;
 
 ---
 
-<details><summary><h2>PHP 7.3 (2018)</h2></summary>
+<details open><summary><h2>PHP 7.3 (2018)</h2></summary>
 
 ### Trailing Commas in Function Calls
 Allows trailing commas in function calls
@@ -267,7 +267,7 @@ TEXT;
 
 ---
 
-<details><summary><h2>PHP 7.2 (2017)</h2></summary>
+<details open><summary><h2>PHP 7.2 (2017)</h2></summary>
 
 ### Object Type Hint
 Allows specifying "object" as a type hint
@@ -293,7 +293,7 @@ class MyClass {
 
 ---
 
-<details><summary><h2>PHP 7.1 (2016)</h2></summary>
+<details open><summary><h2>PHP 7.1 (2016)</h2></summary>
 
 ### Nullable Types
 Allows null values in type hints
@@ -319,7 +319,7 @@ function test(): void {
 
 ---
 
-<details><summary><h2>PHP 7.0 (2015)</h2></summary>
+<details open><summary><h2>PHP 7.0 (2015)</h2></summary>
 
 ### Scalar Type Declarations
 Allows specifying parameter and return types

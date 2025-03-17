@@ -186,7 +186,7 @@ function App() {
 
 </details>
 
-<details><summary><h2>React 18</h2></summary>
+<details open><summary><h2>React 18</h2></summary>
 
 ### Concurrent Rendering
 Enables React to prepare multiple UI updates at the same time.
@@ -294,7 +294,7 @@ function Comments() {
 </details>
 
 
-<details><summary><h2>React 17</h2></summary>
+<details open><summary><h2>React 17</h2></summary>
 
 ### No New Features, Just Improvements
 React 17 focused on improving the existing architecture rather than introducing new features.
@@ -347,7 +347,7 @@ function App() {
 </details>
 
 
-<details><summary><h2>React 16</h2></summary>
+<details open><summary><h2>React 16</h2></summary>
 
 ### React Hooks
 Introduced hooks like `useState`, `useEffect`, and `useContext`.

@@ -10,10 +10,10 @@ export async function loader() {
 }
 
 export const meta = () => {
-  return {
-    title: "Home",
-    description: "Home page of the site",
-  }
+  return [
+    { title: "What's new?!" },
+    { name: "description", content: "Stay ahead with the latest features and updates for each language and technology – all in one place, no Googling required!" },
+  ]
 }
 
 export default function Index() {
