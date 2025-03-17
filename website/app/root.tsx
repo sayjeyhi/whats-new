@@ -11,6 +11,7 @@ import Header from "~/components/ui/header";
 import Footer from "~/components/ui/footer";
 import {latestThreeUpdatedTechnologies} from "~/utils/technologies.server";
 import {json} from "@remix-run/node";
+import {useLocation} from "react-router";
 
 export const links = () => {
   return [
@@ -24,6 +25,14 @@ export async function loader() {
 }
 
 export default function App() {
+  const isHealthz = useLocation().pathname === "/healthz";
+
+  console.log("--------------");
+  console.log("useLocation().pathname", useLocation().pathname);
+  console.log(isHealthz);
+  if (isHealthz) {
+    return 'OK';
+  }
   const { posts } = useLoaderData<typeof loader>();
 
   return (

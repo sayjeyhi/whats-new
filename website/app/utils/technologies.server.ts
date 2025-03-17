@@ -29,8 +29,6 @@ export interface Technology {
 
 const technologiesPath = path.join(process.cwd(), "./data");
 
-console.log("==technologiesPath", technologiesPath);
-
 let Parser: Marked;
 const getParser = async () => {
   if (Parser) {
@@ -77,10 +75,10 @@ const getParser = async () => {
   return Parser;
 };
 
-
 export async function getTechnologyList(): Promise<Technology[]> {
-  const files = await readdir(technologiesPath);
+  console.log("==getTechnologyList");
 
+  const files = await readdir(technologiesPath);
 
   const technologies = await Promise.all(
     files
@@ -118,6 +116,7 @@ export async function getTechnologyList(): Promise<Technology[]> {
 }
 
 export async function latestThreeUpdatedTechnologies(): Promise<Technology[]> {
+  console.log("==latestThreeUpdatedTechnologies");
   const technologies = await getTechnologyList();
   return technologies
     .sort((post) => parseInt(post.updated, 10))
@@ -125,6 +124,8 @@ export async function latestThreeUpdatedTechnologies(): Promise<Technology[]> {
 }
 
 export async function getTechnology(slug: string): Promise<Technology | null> {
+  console.log("==getTechnology");
+
   try {
     const content = await readFile(path.join(technologiesPath, `${slug}.md`), "utf-8");
     const { attributes, body } = frontMatter<Technology>(content);
