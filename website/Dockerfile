@@ -1,4 +1,4 @@
-FROM oven/bun:latest AS base
+FROM oven/bun:slim AS base
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ COPY . .
 
 RUN bun run build
 
-FROM oven/bun:latest AS production
+FROM node:20-alpine AS production
 
 WORKDIR /app
 
@@ -25,4 +25,4 @@ COPY --from=builder /app/data/ ./data
 
 EXPOSE 3000
 
-CMD ["bun", "run", "start"]
+CMD ["npm", "run", "start"]
