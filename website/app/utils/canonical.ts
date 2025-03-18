@@ -8,6 +8,7 @@ export const getTechnologyVersionCanonical = (
 ) => {
   return `/technology/${slug}/${version
     .replace(/\s/g, "-")
-    .replace(/[^0-9]/g, "")
+    .replace(/\(.*?\)/g, "")
+    .replace(/[^0-9.]/g, "")
   }`;
 };

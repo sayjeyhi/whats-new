@@ -30,6 +30,13 @@ export default function TechnologySlugVersion({ params }: LoaderFunctionArgs) {
   const { version } = useLoaderData<typeof loader>();
   return (
     <article>
+      <h1 className="text-4xl font-bold mb-4">
+        What's new in {version.title} {params.version}?
+      </h1>
+      <div className="text-gray-600 mb-7">
+        Last updated: {version.formatedDate}
+      </div>
+
       <Breadcrumb
         items={[
           { title: version.title, url: `/technology/${version.slug}` },
@@ -40,9 +47,6 @@ export default function TechnologySlugVersion({ params }: LoaderFunctionArgs) {
         ]}
       />
 
-      <h1 className="text-4xl font-bold mb-4">
-        What's new in {version.title} {params.version}?
-      </h1>
       <div
         className="prose dark:prose-invert max-w-[75ch]"
         dangerouslySetInnerHTML={{ __html: version.content }}
