@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^1.1.25",
+    "@giscus/react": "^3.1.0",
     "@react-router/node": "^7.3.0",
     "@react-router/serve": "^7.3.0",
     "@tailwindcss/forms": "^0.5.10",
@@ -25,6 +26,7 @@
     "react-dom": "^19.0.0",
     "react-router": "^7.3.0",
     "shiki": "^3.2.1",
+    "sib-api-v3-typescript": "^2.2.2",
     "zod": "^3.24.2"
   },
   "devDependencies": {

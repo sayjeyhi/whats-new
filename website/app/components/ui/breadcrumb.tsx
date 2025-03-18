@@ -9,7 +9,7 @@ type Props = {
 
 export const Breadcrumb = ({ items }: Props) => {
   return (
-    <ul className="flex gap-1 items-center mb-7 border border-gray-200 dark:border-gray-800 rounded-xl px-3 py-2 bg-white dark:bg-gray-800 [&>li>a]:flex [&>li>a]:text-sm [&>li>a]:py-1 [&>li>a]:px-2 [&>li]:rounded-lg [&>li]:hover:bg-gray-100 dark:[&>li]:hover:bg-gray-700">
+    <ul className="flex gap-1 items-center mb-7 border border-gray-200 dark:border-gray-800 rounded-xl px-2 py-1 bg-white dark:bg-gray-800 [&>li]:transition-colors [&>li>a]:flex [&>li>a]:text-sm [&>li>a]:py-1 [&>li>a]:px-2 [&>li]:rounded-lg [&>li]:hover:bg-gray-100 dark:[&>li]:hover:bg-gray-700">
       <li>
         <a className="items-center gap-2" href="/">
           <svg

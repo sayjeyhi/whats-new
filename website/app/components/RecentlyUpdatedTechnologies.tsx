@@ -1,9 +1,10 @@
-import { type Technology } from "~/utils/types";
+import { type TechnologyListItem } from "~/utils/types";
+import { Link } from "react-router";
 
 export default function RecentlyUpdatedTechnologies({
   technologies,
 }: {
-  technologies: Technology[];
+  technologies: TechnologyListItem[];
 }) {
   return (
     <section>
@@ -12,10 +13,10 @@ export default function RecentlyUpdatedTechnologies({
       </h2>
       <div className="space-y-1">
         {technologies.map((item) => (
-          <a
+          <Link
             key={item.slug}
             className="block hover:no-underline decoration-2 p-5 rounded-xl odd:bg-linear-to-tr odd:from-gray-100 odd:to-gray-50 dark:odd:bg-linear-to-tr dark:odd:from-gray-800 dark:odd:to-gray-800/[0.65] border-2 border-transparent hover:border-green-200"
-            href={`/technology/${item.slug}`}
+            to={`/technology/${item.slug}`}
           >
             <article>
               <div className="sm:flex gap-5">
@@ -45,7 +46,7 @@ export default function RecentlyUpdatedTechnologies({
                 </div>
               </div>
             </article>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

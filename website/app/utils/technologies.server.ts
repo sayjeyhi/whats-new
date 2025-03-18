@@ -1,6 +1,3 @@
-import { readFile } from "fs/promises";
-import path from "path";
-import frontMatter from "front-matter";
 import type {
   TechnologyList,
   TechnologyDetails,
