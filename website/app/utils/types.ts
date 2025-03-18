@@ -13,6 +13,7 @@ export interface TechnologyListItem {
   description: string;
   image: string;
   excerpt: string;
+  latestVersion: string;
 }
 
 export type TechnologyList = TechnologyListItem[];

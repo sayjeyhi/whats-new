@@ -4,8 +4,8 @@ import {
   useLoaderData,
 } from "react-router";
 import { getTechnologyVersion } from "~/utils/technologies.server";
-import { ArrowLeftIcon } from "~/components/ArrowLeft";
 import { Breadcrumb } from "~/components/ui/breadcrumb";
+import Giscus from "@giscus/react";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const technologyVersion = await getTechnologyVersion(
@@ -48,8 +48,25 @@ export default function TechnologySlugVersion({ params }: LoaderFunctionArgs) {
       />
 
       <div
-        className="prose dark:prose-invert max-w-[75ch]"
+        className="prose dark:prose-invert max-w-[75ch] mb-5"
         dangerouslySetInnerHTML={{ __html: version.content }}
+      />
+
+      <Giscus
+        id="comments"
+        repo="sayjeyhi/whats-new"
+        repoId="R_kgDOOIg_ew"
+        category="General"
+        categoryId="DIC_kwDOOIg_e84CoMX4"
+        mapping="pathname"
+        strict="0"
+        reactionsEnabled="0"
+        emitMetadata="0"
+        inputPosition="bottom"
+        theme="dark_dimmed"
+        lang="en"
+        loading="lazy"
+        term="Welcome to @giscus/react component!"
       />
     </article>
   );

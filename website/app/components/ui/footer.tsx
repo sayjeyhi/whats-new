@@ -1,8 +1,9 @@
-import { type Technology } from "~/utils/types";
+import { type TechnologyShortData } from "~/utils/types";
 import Newsletter from "~/components/Newsletter";
+import { Link } from "react-router";
 
 type Props = {
-  latestUpdatedTechnologies: Technology[];
+  latestUpdatedTechnologies: TechnologyShortData[];
 };
 
 export default function Footer({ latestUpdatedTechnologies }: Props) {
@@ -10,14 +11,20 @@ export default function Footer({ latestUpdatedTechnologies }: Props) {
     <footer className="space-y-12 text-center pb-16">
       <div className="group flex justify-center gap-4">
         {latestUpdatedTechnologies.map((tech) => (
-          <img
+          <Link
+            className="even:rotate-2 odd:-rotate-2 even:hover:rotate-0 odd:hover:rotate-0 transition duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] shadow-lg"
+            to={`/technology/${tech.slug}`}
             key={tech.slug}
-            className="rounded-xl even:rotate-2 odd:-rotate-2 even:group-hover:rotate-0 odd:group-hover:rotate-0 transition duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] shadow-lg"
-            src={tech.image}
-            width={100}
-            height={100}
-            alt={tech.title}
-          />
+          >
+            <img
+              className="rounded-xl"
+              key={tech.slug}
+              src={tech.image}
+              width={100}
+              height={100}
+              alt={tech.title}
+            />
+          </Link>
         ))}
       </div>
 
@@ -100,7 +107,7 @@ export default function Footer({ latestUpdatedTechnologies }: Props) {
           >
             What`s new
           </a>{" "}
-          OSS project. All rights reserved.
+          OSS project by <a href="https://catshoulder.dev/" target="_blank" rel="noreferrer" className="underline" >CatShoulder</a> devs.<br/> Use it under the <a href="https://github.com/sayjeyhi/whats-new/blob/main/LICENCE" target="_blank" rel="noreferrer" className="underline">MIT License</a>.
         </p>
       </div>
     </footer>
